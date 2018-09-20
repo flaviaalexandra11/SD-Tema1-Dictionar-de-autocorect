@@ -1,0 +1,31 @@
+				
+																			README
+
+	Pentru implementarea dictionarului, pe langa functiile deja declarate, am mai creat alte functii ajutatoare: newElement(), isEmptyList(), noElementsList(), orderList(), computeIndex(), deleteElement(), addElementNoSort si freeListCirc().
+	La inceputul programului, se creeaza un dictionar (in createDictionary) alocandu-se memorie pentru un dictionar si pentru liste. Totodata, fiecare lista este initializata cu NULL. 
+	In functia newElement(), aloc memorie pentru un element in care retin cheia si valoarea cerute, iar legaturile next si prev sunt initializate cu NULL.
+	Functia isEmptylist() verifica daca o lista circulara sau necirculara este goala.
+	In noElementsList(), calculez numarul de elemente dintr-o lista circulara.
+	In orderList() ordonez o lista circulara, folosind Bubble sort, mai intai descrescator dupa frecventa, apoi alfabetic dupa key si value.
+	computeIndex() calculeaza indexul (numarul listei) unde trebuie introdus un element nou in dictionar.
+	Functia deleteElement() primeste ca paramtru un element pe care il sterge, eliberand memoria alaocata pentru key, value si punand in locul lor NULL. Aceeasi operatie se executa si pentru element in sine.
+	Functia removeElement() primeste ca paramtru dictionarul, cheia si valoarea elementului ce urmeaza sa fie sters. Dupa ce se verifica daca dictionarul nu este gol, se caluceaza indexul pentru elementul
+ repectiv, se cauta in lista repectiva, apoi se refac legaturile si se sterge elementul folosind deleteElement.
+	In functia addElement(), intai se calculeaza indexul unde trebuie inserat tripletul, se calculeaza dimensiunea dictionarului (cate elemente exisya in total) si se verifica daca acest numar depaseste 2*N. 
+Daca da, atunci se sterge ultimul element din fiecare lista. Daca lista in care trebuie inserat elmentul este goala, se va adauga un nou element astfel incat next si prev sa pointeze catre el insusi.
+Daca lista nu este goala, intai se cauta key si value in lista si daca sunt gasite se incrementeaza frequency. Daca nu este gasit elementul, atunci inainte de adaugare se verifica daca lista are N elemente. 
+Daca da, atunci se sterge elementul de pe ultima pozitie. In cele din urma elementul este adaugat la finalul listei si apoi lista este reordonata folosind, orderList().
+	Functia printDictionary() parcurge dictionarul lista cu lista si pentru fiecare afiseaza elementele continute sau newline in cazul in care lista este goala.
+	In get(), se parcurge fiecare lista din dictionar pentru a gasi elementele cu o cheie data. Este creata o lista dublu inlantuita simpla in care sunt retinute aceste elemente si apoi este incrementata frecventa lor in dictionar.
+	Functia printValue() afiseaza toate elementele care au o valoare data, respectiv printFrequency() afiseaza toate elementele care au o frecventa data.
+	In unionValues, se parcurge dictionarul si se copiaza intr-o lista dublu inlantuita necirculara toate elementele din dictionar care au valoarea data ca parametru. 
+	Acelasi lucru il face si unionMaxFrequency cu exceptia faptului ca selecteaza elementele din fiecare lista care au frecventa maxima. Tinand cont de faptul ca elementul de frecventa maxima se afla intotdeauna pe prima pozitie, pentru fiecare lista se retin elementele care au frecventa egala cu frecventa primului element.
+	addElementNoSort() este o functie care face acelasi lucru ca si addElement() cu exceptia faptului ca nu sorteaza elementele din liste. Aceasta este folosita in reverseLists() care creeaza un nou dictionar unde tine minte aceleasi
+ valori ca dictionarul dat ca parametru cu exceptia faptului ca elementele din liste sunt puse in ordine inversa. De aceea parcurgerea elemntelor din liste se face de la ultimul catre primul.
+	Functia printList() afiseaza o lista dublu inlantuita necirculara. 
+	Functiile freeListCirc() si freeList() folosesc functiile deleteElement() ca sa elibereze memoria alocata pentru listele transmise ca parametru si sunt folosite la randul or in freeDictionary() pentru a elibera memori alocata pentru dictionar.
+
+Popescu Flavia-Alexandra 
+311CD
+	
+	
